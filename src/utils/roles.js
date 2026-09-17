@@ -1,0 +1,5 @@
+export const ROLES = {
+    PRINCIPAL: "PRINCIPAL",
+    TEACHER: "TEACHER",
+    STUDENT: "STUDENT",
+};
