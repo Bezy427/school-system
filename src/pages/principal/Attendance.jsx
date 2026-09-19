@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getAttandances, createAttandance, getStudents, getSubjects } from "../../services/api";
+import { getAttendances, createAttendance, getStudents, getSubjects } from "../../services/api";
 import AttendanceForm from "../../components/attendances/AttendanceForm";
 import AttendanceTable from "../../components/attendances/AttendanceTable";
 import LoadingState from "../../components/dashboard/LoadingState";
@@ -34,13 +34,13 @@ export default function Exams() {
                 setLoading(true);
                 setError("");
 
-                const [attendanceData, studentsData, subjectsData] = await Promise.all([
-                    getAttandances(),
+                const [attendancesData, studentsData, subjectsData] = await Promise.all([
+                    getAttendances(),
                     getSubjects(),
                     getStudents(),
                 ]);
 
-                setAttendance(Array.isArray(attendanceData) ? attendanceData : []);
+                setAttendance(Array.isArray(attendancesData) ? attendancesData : []);
                 setStudents(
                     Array.isArray(studentsData) ? studentsData : []
                 );
@@ -91,7 +91,7 @@ export default function Exams() {
                 status: form.status,
             };
 
-            const createdAttendance = await createdAttendance(attendanceData);
+            const createdAttendance = await createdAttendance(attendancesData);
 
             setAttendance((current) => [...current, createdAttendance]);
 

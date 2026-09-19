@@ -272,11 +272,15 @@ export function deleteEvent(id) {
 
 // Attendance API
 
-export function getAttandances() {
+export function getAttendances() {
     return request(`${API_BASE}/attendance`);
 }
 
-export function createAttandance(attendance) {
+export function getAttendance(id) {
+    return request(`${API_BASE}/attendance/${id}`);
+}
+
+export function createAttendance(attendance) {
     return request(`${API_BASE}/attendance/`, {
         method: "POST",
         body: JSON.stringify(attendance),
