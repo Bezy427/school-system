@@ -23,6 +23,10 @@ import TeacherSubjects from "./pages/teacher/Subjects";
 import TeacherStudents from "./pages/teacher/Students";
 import TeacherExams from "./pages/teacher/Exams";
 import TeacherAttendances from "./pages/teacher/Attendances";
+import StudentSubjects from "./pages/students/Subjects";
+import StudentResults from "./pages/students/Results";
+import StudentAttendance from "./pages/students/Attendance";
+import StudentEvents from "./pages/students/Events";
 
 export default function App() {
   return (
@@ -49,6 +53,10 @@ export default function App() {
           <Route path="/teacher" element={<TeacherDashboard />}/> 
           <Route path="/student" element={<StudentDashboard />}/> 
           <Route path="/student/profile" element={<Profile />}/> 
+          <Route path="/student/subjects" element={<StudentSubjects />}/> 
+          <Route path="/student/results" element={<StudentResults />}/> 
+          <Route path="/student/attendance" element={<StudentAttendance />}/> 
+          <Route path="/student/events" element={<StudentEvents />}/> 
           {/*Prootected Routes*/} 
           <Route element={<ProtectedRoute />}>
             <Route element={<RoleRoute allowedRoles={["PRINCIPAL"]}/>}>
