@@ -1,15 +1,12 @@
 import { Navigate, Outlet } from "react-router";
 import { useAuth } from "../context/AuthContext";
+import LoadingScreen from "./LoadingScreen";
 
 export default function({ allowedRoles }) {
     const { user, isAuthenticated, loading} = useAuth();
 
     if (loading) {
-        return (
-            <div className="flex min-h-[60vh] items-center justify-center">
-                <p className="text-gray-500">Loading...</p>
-            </div>
-        );
+        return <LoadingScreen />;
     }
 
     if (!isAuthenticated) {

@@ -27,15 +27,28 @@ export function AuthProvider({ children }) {
     }, []);
 
     function login(authData) {
-        const receivedToken = authData.token;
+        console.log("Login response:", authData);
+
+        const receivedToken = 
+            authData?.token ||
+            authData?.accessToken ||
+            authData?.jwt;
 
         if (!receivedToken) {
             throw new Error("Login response did not contain a token.");
         }
 
         const userData = {
-            username: authData.username,
-            role: authData.role,
+            username: 
+                authData?.username ||
+                authData?.user?.username ||
+                authData?.email ||
+                "User",
+
+            role:
+                authData?.role ||
+                authData?.email ||
+                null,    
         };
 
         localStorage.setItem("token", receivedToken);

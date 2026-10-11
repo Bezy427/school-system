@@ -52,6 +52,11 @@ async function request(url, options = {}) {
                 throw new ApiError(message || "Invalid request", 400);
 
             case 401:
+                localStorage.removeItem("token")
+                localStorage.removeItem("user")
+
+                window.dispatchEvent(new Event("auth:logout"))
+                
                 throw new ApiError(
                     message || "You are not authenticated.", 401
                 );
