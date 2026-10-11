@@ -19,7 +19,6 @@ export default function Exams() {
     const [searchTerm, setSearchTerm] = useState("");
 
     const [showForm, setShowForm] = useState(false);
-    const [selectedExam, setSelectedExam] = useState(null);
 
     const [form, setForm] = useState(true);
 
