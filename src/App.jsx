@@ -10,7 +10,7 @@ import RoleRoute from "./components/RoleRoute";
 import StudentDashboard from "./pages/students/StudentDashboard";
 import Profile from "./pages/students/Profile";
 import PrincipalDashboard from "./pages/principal/PrincipalDashboard";
-import Students from "./pages/principal/students";
+import Students from "./pages/principal/Students";
 import Teachers from "./pages/principal/Teachers";
 import Departments from "./pages/principal/Departments";
 import Subjects from "./pages/principal/Subjects";
