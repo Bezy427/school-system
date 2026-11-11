@@ -13,11 +13,11 @@ const empty = {
 
 const fields = [
     { name: 'registrationNumber', label: 'RegistrationNumber', type: 'text'},
-    { name: 'firstName', label: 'First name', type: 'text'},
-    { name: 'lastName', label: 'Last name', type: 'text'},
+    { name: 'firstName', label: 'First Name', type: 'text'},
+    { name: 'lastName', label: 'Last Name', type: 'text'},
     { name: 'email', label: 'Email', type: 'email'},
     { name: 'grade', label: 'Grade', type: 'text'},
-    { name: 'dateOfBirth', label: 'Date of birth', type: 'date'},
+    { name: 'dateOfBirth', label: 'Date of Birth', type: 'date'},
     { name: 'parentContact', label: 'Parent Contact', type: 'text'},
 ]
 
