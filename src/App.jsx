@@ -2,6 +2,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Login from "./pages/Login";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Students from "./pages/Students";
+import Teachers from "./pages/Teachers";
 
 export default function App() {
   return (
@@ -9,6 +10,7 @@ export default function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/students" element={<Students />} />
+        <Route path="/teachers" element={<Teachers />} />
         <Route 
           path="/dashboard" 
           element={<ProtectedRoute><h1 className="p-6 text-2xl">Dashboard</h1></ProtectedRoute>} 
