@@ -47,7 +47,6 @@ export default function Teachers() {
         }
     }
 
-    // In mock mode the form hands back the new teacher, since nothing reaches a server.
     function handleSaved(created) {
         setShowForm(false)
         if (USE_MOCK) {
@@ -105,7 +104,6 @@ export default function Teachers() {
                             <tr key={t.id} className="border-t border-gray-100">
                                 <td className="px-4 py-3">{t.firstName} {t.lastName}</td>
                                 <td className="px-4 py-3">{t.subject}</td>
-                                {/* works whether the API returns a string or a department object */}
                                 <td className="px-4 py-3">{t.department?.name ?? t.department}</td>
                                 <td className="px-4 py-3">{t.email}</td>
                                 <td className="px-4 py-3 text-right">
