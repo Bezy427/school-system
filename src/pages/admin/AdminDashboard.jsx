@@ -39,7 +39,7 @@ const navigation = [
   { name: "Dashboard", path: "/admin", icon: LayoutDashboard },
   { name: "Students", path: "/admin/students", icon: GraduationCap },
   { name: "Teachers", path: "/admin/teachers", icon: Users },
-  { name: "Classes", path: "/admin/classes", icon: School },
+  { name: "Classes", path: "/admin/lectures", icon: School },
   { name: "Departments", path: "/admin/departments", icon: BookOpen },
   { name: "Attendance", path: "/admin/attendance", icon: CalendarCheck },
   { name: "Examinations", path: "/admin/examinations", icon: ClipboardList },

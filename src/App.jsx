@@ -6,21 +6,21 @@ import Login from "./pages/public/Login";
 import Register from "./pages/Register";
 
 import AdminDashboard from "./pages/admin/AdminDashboard";
+import PrincipalLectures from "./pages/admin/PrincipalLectures";
+
 import StudentDashboard from "./pages/student/StudentDashboard";
 import StudentProfile from "./pages/student/StudentProfile";
-import Teachers from "./pages/Teachers";
+import StudentSubjects from "./pages/student/StudentSubjects";
 
 import ProtectedRoute from "./components/ProtectedRoute";
 
 export default function App() {
   return (
     <Routes>
-      {/* Public routes */}
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
 
-      {/* Principal portal */}
       <Route
         path="/admin"
         element={
@@ -30,7 +30,15 @@ export default function App() {
         }
       />
 
-      {/* Student portal */}
+      <Route
+        path="/admin/lectures"
+        element={
+          <ProtectedRoute allowedRoles={["PRINCIPAL"]}>
+            <PrincipalLectures />
+          </ProtectedRoute>
+        }
+      />
+
       <Route
         path="/students"
         element={
@@ -49,17 +57,15 @@ export default function App() {
         }
       />
 
-      {/* Teacher portal */}
       <Route
-        path="/teachers"
+        path="/students/subjects"
         element={
-          <ProtectedRoute allowedRoles={["TEACHER"]}>
-            <Teachers />
+          <ProtectedRoute allowedRoles={["STUDENT"]}>
+            <StudentSubjects />
           </ProtectedRoute>
         }
       />
 
-      {/* Unknown routes */}
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
